@@ -28,13 +28,13 @@ The name *Srotas* — derived from Sanskrit — means “stream” or “flow”
 
 ## Installation 📦
 
-```bash
-npm install srotas
-# or
-yarn add srotas
-# or
-pnpm add srotas
-```
+  ```bash
+  npm install srotas
+  # or
+  yarn add srotas
+  # or
+  pnpm add srotas
+  ```
 
 ### Prerequisites
 
@@ -45,7 +45,7 @@ Ensure you have the following installed:
 
 ---
 
-## Usage ⚙️
+### Usage ⚙️
 
 ```ts
 import {
@@ -70,9 +70,9 @@ You can also use more advanced handlers like:
 
 ---
 
-## Exports 📤
+### Exports 📤
 
-### General Handlers
+#### General Handlers
 
 ```ts
 preventDefaultOnly(e)
@@ -80,13 +80,13 @@ stopPropagationOnly(e)
 preventAndStopEvent(e)
 ```
 
-### Debug Handlers
+#### Debug Handlers
 
 ```ts
 logEventDetails(e)
 ```
 
-### Context-Specific Handlers
+#### Context-Specific Handlers
 
 ```ts
 preventRightClick(e)
@@ -95,7 +95,7 @@ preventDrag(e)
 blockKeyPress(e, ["Enter", "Escape"])
 ```
 
-### Utility Handlers
+#### Utility Handlers
 
 ```ts
 debounceEvent(handlerFn, delay)
@@ -106,7 +106,7 @@ All handlers are strongly typed and compatible with React's synthetic events.
 
 ---
 
-## Project Structure 📂
+### Project Structure 📂
 
 ```bash
 srotas/
@@ -124,7 +124,7 @@ srotas/
 
 ---
 
-## Scripts 🚀
+### Scripts 🚀
 
 ```bash
 # Build the package
@@ -142,13 +142,13 @@ npm run lint
 
 ---
 
-## License 📜
+### License 📜
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
 
 ---
 
-## Acknowledgments 🙌
+### Acknowledgments 🙌
 
 - Inspired by repetitive patterns seen across frontend projects — especially in form handling, keyboard interactivity, and user inputs.
 - The name *Srotas* reflects the idea of controlling streams and flows — whether of data, events, or user interaction.
