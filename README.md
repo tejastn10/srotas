@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="logo.svg" alt="Logo">
+  <img src="logo.svg" alt="Srotas Logo">
 </p>
 
-# Eden 🌱
+# Srotas 🔁
 
 ![Node.js Version](https://img.shields.io/badge/Node.js-22%2B-339933?logo=nodedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-007ACC?logo=typescript&logoColor=white)
@@ -10,54 +10,135 @@
 ![Vite](https://img.shields.io/badge/Vite-6%2B-646CFF?logo=vite&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative&logoColor=white)
 
-**Eden** is a minimal React + TypeScript template designed to get started quickly with [Vite](https://vitejs.dev/). It includes pre-configured tools like ESLint, Prettier, Husky, and Commitlint to streamline development and enforce consistent code quality.
+**Srotas** (स्रोतस्) is a lightweight React-friendly utility library offering a set of reusable event handler functions. It helps developers avoid boilerplate code by offering common event handling patterns — debouncing, throttling, blocking key presses, preventing right clicks, and more.
+
+The name *Srotas* — derived from Sanskrit — means “stream” or “flow”, a poetic nod to the flow of events this library elegantly manages.
 
 ---
 
-## Features 🌟
+## Features 🌊
 
-- **React + Vite**: Fast development with hot module replacement.
-- **TypeScript**: Strongly typed language for better code reliability.
-- **Pre-configured Tooling**:
-  - **ESLint**: Identify and fix linting issues.
-  - **Prettier**: Opinionated code formatting.
-  - **Husky**: Pre-commit hooks for better workflows.
-  - **Commitlint**: Enforce consistent commit message formatting.
-- **Developer Experience**: Optimized for speed and simplicity.
+- 🎯 **Focused API**: Tiny, purposeful, and highly reusable event utilities.
+- 💡 **Typed Handlers**: Built with full TypeScript support and IDE autocompletion.
+- ⚛️ **React-Ready**: Designed for seamless integration in React apps.
+- ⚡ **Zero Dependencies**: Tree-shakable and dependency-free.
+- 🧪 **Dev-First**: Built with Vite, TypeScript, and tested for production use.
 
 ---
 
-## Getting Started 🚀
+## Installation 📦
+
+```bash
+npm install srotas
+# or
+yarn add srotas
+# or
+pnpm add srotas
+```
 
 ### Prerequisites
 
 Ensure you have the following installed:
 
 - **Node.js**: v22 or later.
+- **React**: v19 or later.
 
 ---
 
-### Installation ⚙️
+## Usage ⚙️
 
-1. Clone the repository:  
+```ts
+import {
+  preventDefaultOnly,
+  stopPropagationOnly,
+  preventAndStopEvent,
+  debounceEvent,
+  throttleEvent,
+} from "srotas";
 
-   ```bash
-   git clone https://github.com/tejastn10/eden.git
-   cd eden
+<button onClick={preventAndStopEvent}>Click</button>
+```
 
-2. Install dependencies:
+You can also use more advanced handlers like:
 
-   ```bash
-   npm install
-   ```
+```ts
+<input
+  onKeyDown={(e) => blockKeyPress(e, ["Enter", "Escape"])}
+  onChange={debounceEvent((e) => handleInputChange(e), 300)}
+/>
+```
 
-3. Start the development server:
+---
 
-   ```bash
-   npm run dev
-   ```
+## Exports 📤
 
-4. Open your browser at `http://localhost:3000` to see Eden in action.
+### General Handlers
+
+```ts
+preventDefaultOnly(e)
+stopPropagationOnly(e)
+preventAndStopEvent(e)
+```
+
+### Debug Handlers
+
+```ts
+logEventDetails(e)
+```
+
+### Context-Specific Handlers
+
+```ts
+preventRightClick(e)
+focusElement("#input-id")
+preventDrag(e)
+blockKeyPress(e, ["Enter", "Escape"])
+```
+
+### Utility Handlers
+
+```ts
+debounceEvent(handlerFn, delay)
+throttleEvent(handlerFn, limit)
+```
+
+All handlers are strongly typed and compatible with React's synthetic events.
+
+---
+
+## Project Structure 📂
+
+```bash
+srotas/
+├── src/               # Source files
+│   ├── handlers/      # All utility/event handler functions
+│   └── index.ts       # Entry point for all exports
+├── tests/             # Unit tests
+├── dist/              # Bundled output (auto-generated)
+├── vite.config.ts     # Vite configuration
+├── tsconfig.json      # TypeScript config
+├── package.json       # Package metadata
+├── LICENSE.md         # MIT License
+└── README.md          # Project documentation
+```
+
+---
+
+## Scripts 🚀
+
+```bash
+# Build the package
+npm run build
+
+# Testing code
+npm run test
+
+# Formatting code
+npm run format
+
+# Lint for errors
+npm run lint
+```
 
 ---
 
@@ -69,6 +150,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) fi
 
 ## Acknowledgments 🙌
 
-- Built with **Vite** for blazing-fast development workflows.
-- Inspired by the simplicity of **Eden**, a lush and minimal starting point for React projects.
-- Made with ❤️ for developers who love clean and scalable codebases.
+- Inspired by repetitive patterns seen across frontend projects — especially in form handling, keyboard interactivity, and user inputs.
+- The name *Srotas* reflects the idea of controlling streams and flows — whether of data, events, or user interaction.
+- Built with 🧡 by [Tejas](https://github.com/your-username) and open to contributions.
