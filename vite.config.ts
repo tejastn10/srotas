@@ -1,38 +1,39 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 
-import path from "path";
+import { resolve } from "path";
+
+import dts from "vite-plugin-dts";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	// Server configuration
-	server: {
-		port: 3000, // Port for the dev server
-		hmr: true, // Enable Hot Module Replacement
-
-		// Proxy server for API requests
-		proxy: {
-			"/api": {
-				target: "http://localhost:5000", // Server URL
-				changeOrigin: true,
-				rewrite: (path: string) => path.replace(/^\/api/, ""),
+	// Build options
+	build: {
+		lib: {
+			entry: resolve(__dirname, "src/index.ts"),
+			name: "srotas",
+			fileName: "srotas",
+			formats: ["es", "cjs"],
+		},
+		rollupOptions: {
+			external: ["react", "react-dom"],
+			output: {
+				globals: {
+					react: "React",
+					"react-dom": "ReactDOM",
+				},
 			},
 		},
 	},
-
 	// Plugins
-	plugins: [react()],
-
-	// Resolve configuration
-	resolve: {
-		alias: {
-			"@": path.resolve(__dirname, "src"), // Shorten the import path for src directory
-		},
-	},
-
-	// Build configuration
-	build: {
-		outDir: "dist", // Directory for the production build
-		sourcemap: true, // Generate source maps for debugging
-	},
+	plugins: [
+		react(),
+		dts({
+			entryRoot: "src",
+			exclude: [], // Exclude specific files or directories
+			include: ["src"], // Specify your source files
+			outDir: "dist/types", // Output directory for type definitions
+			insertTypesEntry: true, // Insert a types entry file
+		}),
+	],
 });
