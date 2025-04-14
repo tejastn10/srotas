@@ -1,6 +1,6 @@
 {
 	"name": "srotas",
-	"version": "0.0.4",
+	"version": "1.0.0",
 	"type": "module",
 	"types": "dist/types/index.d.ts",
 	"sideEffects": false,
