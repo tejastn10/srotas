@@ -1,9 +1,14 @@
 {
 	"name": "srotas",
-	"version": "0.0.4",
+	"version": "1.0.0",
 	"type": "module",
 	"types": "dist/types/index.d.ts",
-	"description": "A React ",
+	"sideEffects": false,
+	"description": "A utility package providing event handler functions like debounce and throttle for efficient function execution. Built with TypeScript and optimized for React projects.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tejastn10/srotas.git"
+	},
 	"scripts": {
 		"dev": "vite",
 		"test": "vitest --run",
