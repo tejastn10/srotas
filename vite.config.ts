@@ -13,15 +13,19 @@ export default defineConfig({
 			entry: resolve(__dirname, "src/index.ts"),
 			name: "srotas",
 			fileName: "srotas",
-			formats: ["es", "cjs"],
+			formats: ["es"],
 		},
 		rollupOptions: {
-			external: ["react", "react-dom"],
+			external: ["react", "react-dom", "react/jsx-runtime"],
 			output: {
 				globals: {
 					react: "React",
 					"react-dom": "ReactDOM",
+					"react/jsx-runtime": "jsxRuntime",
 				},
+			},
+			treeshake: {
+				moduleSideEffects: false,
 			},
 		},
 	},
