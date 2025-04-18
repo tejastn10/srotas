@@ -8,6 +8,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-007ACC?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19%2B-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6%2B-646CFF?logo=vite&logoColor=white)
+[![Unit Tests](https://github.com/tejastn10/srotas/actions/workflows/unit-test.yml/badge.svg)](https://github.com/tejastn10/srotas/actions/workflows/unit-test.yml)
+[![Publish NPM Package](https://github.com/tejastn10/srotas/actions/workflows/publish.yml/badge.svg)](https://github.com/tejastn10/srotas/actions/workflows/publish.yml)
 ![License](https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative&logoColor=white)
 
 **Srotas** (स्रोतस्) is a lightweight React-friendly utility library offering a set of reusable event handler functions. It helps developers avoid boilerplate code by offering common event handling patterns — debouncing, throttling, blocking key presses, preventing right clicks, and more.
