@@ -38,28 +38,28 @@
 	"engines": {
 		"node": ">=22"
 	},
-	"packageManager": "npm@11.6.3",
+	"packageManager": "npm@11.7.0",
 	"dependencies": {
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
 		"vite-plugin-dts": "^4.5.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.7",
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
-		"@types/react": "^19.2.6",
+		"@biomejs/biome": "^2.3.10",
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
+		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^5.1.1",
-		"@vitest/coverage-v8": "^4.0.13",
-		"dedent": "^1.7.0",
+		"@vitejs/plugin-react": "^5.1.2",
+		"@vitest/coverage-v8": "^4.0.16",
+		"dedent": "^1.7.1",
 		"globals": "^16.5.0",
 		"husky": "^9.1.7",
 		"jest": "^30.2.0",
 		"lint-staged": "^16.2.7",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.4",
-		"vitest": "^4.0.13"
+		"vite": "^7.3.0",
+		"vitest": "^4.0.16"
 	},
 	"peerDependencies": {
 		"react": "^19.1.0",
